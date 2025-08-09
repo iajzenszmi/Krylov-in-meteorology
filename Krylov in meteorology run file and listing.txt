@@ -1,0 +1,409 @@
+:: initializing oneAPI environment ...
+   bash: BASH_VERSION = 5.2.21(1)-release
+   args: Using "$@" for setvars.sh arguments: 
+:: compiler -- latest
+:: debugger -- latest
+:: mpi -- latest
+:: umf -- latest
+:: oneAPI environment initialized ::
+ 
+(base) ian-martin-ajzenszmidt@ian-martin-ajzenszmidt-CFSZ5-3:~$ sudo apt update
+[sudo] password for ian-martin-ajzenszmidt: 
+Hit:1 http://au.archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 http://au.archive.ubuntu.com/ubuntu noble-updates InRelease              
+Hit:3 http://au.archive.ubuntu.com/ubuntu noble-backports InRelease            
+Hit:4 https://screenrec.com/download/ubuntu stable InRelease                   
+Hit:5 https://dl.google.com/linux/chrome/deb stable InRelease                  
+Hit:6 http://security.ubuntu.com/ubuntu noble-security InRelease
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+22 packages can be upgraded. Run 'apt list --upgradable' to see them.
+W: https://screenrec.com/download/ubuntu/dists/stable/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+(base) ian-martin-ajzenszmidt@ian-martin-ajzenszmidt-CFSZ5-3:~$ sudo apt upgradeReading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Calculating upgrade... Done
+The following packages were automatically installed and are no longer required:
+  hwloc-nox i965-va-driver:i386 intel-media-va-driver:i386 libavcodec60:i386
+  libavutil58:i386 libcodec2-1.2:i386 libdav1d7:i386 libdrm-radeon1:i386
+  libgl1-amber-dri libglapi-mesa libglapi-mesa:i386 libgomp1:i386 libgsm1:i386
+  libigdgmm12:i386 libnuma1:i386 libopenjp2-7:i386 libshine3:i386
+  libslurm40t64 libsnappy1v5:i386 libsoxr0:i386 libspeexdsp1:i386
+  libsvtav1enc1d1:i386 libswresample4:i386 libva-drm2:i386 libva-x11-2:i386
+  libva2:i386 libvdpau1:i386 libwebpmux3:i386 libx264-164:i386
+  libx265-199:i386 libxcb-dri2-0:i386 libxvidcore4:i386 libzvbi0t64:i386
+  linux-headers-6.11.0-29-generic linux-hwe-6.11-headers-6.11.0-29
+  linux-hwe-6.11-tools-6.11.0-29 linux-image-6.11.0-29-generic
+  linux-modules-6.11.0-29-generic linux-modules-extra-6.11.0-29-generic
+  linux-tools-6.11.0-29-generic mesa-va-drivers:i386 mesa-vdpau-drivers:i386
+  mpich va-driver-all:i386 vdpau-driver-all:i386
+Use 'sudo apt autoremove' to remove them.
+Get more security updates through Ubuntu Pro with 'esm-apps' enabled:
+  libpostproc-dev libzvbi-common libcjson1 libavdevice60 ffmpeg libpostproc57
+  jupyter-notebook libswscale-dev libavdevice-dev libavcodec60 libavcodec60
+  libgstreamer-plugins-bad1.0-0 libzvbi0t64 libzvbi0t64
+  libgraphicsmagick++-q16-12t64 libavutil58 libavutil58 libswscale7
+  libavutil-dev libswresample4 libswresample4 python3-notebook libavfilter-dev
+  gh 7zip libavformat60 libavformat-dev libavcodec-dev
+  libgraphicsmagick-q16-3t64 libswresample-dev libavfilter9
+Learn more about Ubuntu Pro at https://ubuntu.com/pro
+The following packages have been kept back:
+  libgl1-amber-dri
+The following packages will be upgraded:
+  language-pack-en language-pack-en-base libegl-mesa0 libgbm-dev libgbm1
+  libgbm1:i386 libgl1-mesa-dri libgl1-mesa-dri:i386 libglx-mesa0
+  libglx-mesa0:i386 libosmesa6:i386 libxatracker2 mesa-libgallium
+  mesa-libgallium:i386 mesa-va-drivers mesa-va-drivers:i386 mesa-vdpau-drivers
+  mesa-vdpau-drivers:i386 mesa-vulkan-drivers mesa-vulkan-drivers:i386
+  ubuntu-drivers-common
+21 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+Need to get 56.3 MB of archives.
+After this operation, 20.3 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://au.archive.ubuntu.com/ubuntu noble-updates/main amd64 language-pack-en all 1:24.04+20250724 [1,892 B]
+Get:2 http://au.archive.ubuntu.com/ubuntu noble-updates/main amd64 language-pack-en-base all 1:24.04+20250724 [447 kB]
+Get:3 http://au.archive.ubuntu.com/ubuntu noble-updates/main amd64 ubuntu-drivers-common amd64 1:0.9.7.6ubuntu3.2 [65.6 kB]
+Get:4 http://au.archive.ubuntu.com/ubuntu noble-updates/main amd64 libgl1-mesa-dri amd64 25.0.7-0ubuntu0.24.04.1 [35.7 kB]
+Get:5 http://au.archive.ubuntu.com/ubuntu noble-updates/main i386 libgl1-mesa-dri i386 25.0.7-0ubuntu0.24.04.1 [33.8 kB]
+Get:6 http://au.archive.ubuntu.com/ubuntu noble-updates/main i386 libglx-mesa0 i386 25.0.7-0ubuntu0.24.04.1 [147 kB]
+Get:7 http://au.archive.ubuntu.com/ubuntu noble-updates/main amd64 libglx-mesa0 amd64 25.0.7-0ubuntu0.24.04.1 [139 kB]
+Get:8 http://au.archive.ubuntu.com/ubuntu noble-updates/main amd64 libegl-mesa0 amd64 25.0.7-0ubuntu0.24.04.1 [124 kB]
+Get:9 http://au.archive.ubuntu.com/ubuntu noble-updates/main amd64 libgbm-dev amd64 25.0.7-0ubuntu0.24.04.1 [9,816 B]
+Get:10 http://au.archive.ubuntu.com/ubuntu noble-updates/main i386 libgbm1 i386 25.0.7-0ubuntu0.24.04.1 [34.4 kB]
+Get:11 http://au.archive.ubuntu.com/ubuntu noble-updates/main amd64 libgbm1 amd64 25.0.7-0ubuntu0.24.04.1 [32.7 kB]
+Get:12 http://au.archive.ubuntu.com/ubuntu noble-updates/main amd64 mesa-libgallium amd64 25.0.7-0ubuntu0.24.04.1 [10.3 MB]
+Get:13 http://au.archive.ubuntu.com/ubuntu noble-updates/main i386 mesa-libgallium i386 25.0.7-0ubuntu0.24.04.1 [10.7 MB]
+Get:14 http://au.archive.ubuntu.com/ubuntu noble-updates/main amd64 libxatracker2 amd64 25.0.7-0ubuntu0.24.04.1 [2,478 kB]
+Get:15 http://au.archive.ubuntu.com/ubuntu noble-updates/universe amd64 mesa-va-drivers amd64 25.0.7-0ubuntu0.24.04.1 [5,928 B]
+Get:16 http://au.archive.ubuntu.com/ubuntu noble-updates/universe i386 mesa-va-drivers i386 25.0.7-0ubuntu0.24.04.1 [5,910 B]
+Get:17 http://au.archive.ubuntu.com/ubuntu noble-updates/main i386 mesa-vdpau-drivers i386 25.0.7-0ubuntu0.24.04.1 [20.9 kB]
+Get:18 http://au.archive.ubuntu.com/ubuntu noble-updates/main amd64 mesa-vdpau-drivers amd64 25.0.7-0ubuntu0.24.04.1 [20.9 kB]
+Get:19 http://au.archive.ubuntu.com/ubuntu noble-updates/main i386 mesa-vulkan-drivers i386 25.0.7-0ubuntu0.24.04.1 [12.8 MB]
+Get:20 http://au.archive.ubuntu.com/ubuntu noble-updates/main amd64 mesa-vulkan-drivers amd64 25.0.7-0ubuntu0.24.04.1 [15.3 MB]
+Get:21 http://au.archive.ubuntu.com/ubuntu noble-updates/main i386 libosmesa6 i386 25.0.7-0ubuntu0.24.04.1 [3,620 kB]
+Fetched 56.3 MB in 3s (19.1 MB/s)               
+Preconfiguring packages ...
+(Reading database ... 530793 files and directories currently installed.)
+Preparing to unpack .../00-language-pack-en_1%3a24.04+20250724_all.deb ...
+Unpacking language-pack-en (1:24.04+20250724) over (1:24.04+20250130) ...
+Preparing to unpack .../01-language-pack-en-base_1%3a24.04+20250724_all.deb ...
+Unpacking language-pack-en-base (1:24.04+20250724) over (1:24.04+20250130) ...
+Preparing to unpack .../02-ubuntu-drivers-common_1%3a0.9.7.6ubuntu3.2_amd64.deb 
+...
+Unpacking ubuntu-drivers-common (1:0.9.7.6ubuntu3.2) over (1:0.9.7.6ubuntu3.1) .
+..
+Preparing to unpack .../03-libgl1-mesa-dri_25.0.7-0ubuntu0.24.04.1_i386.deb ...
+De-configuring libgl1-mesa-dri:amd64 (24.2.8-1ubuntu1~24.04.1), to allow configu
+ration of libgl1-mesa-dri:i386 (25.0.7-0ubuntu0.24.04.1) ...
+Unpacking libgl1-mesa-dri:i386 (25.0.7-0ubuntu0.24.04.1) over (24.2.8-1ubuntu1~2
+4.04.1) ...
+Preparing to unpack .../04-libgl1-mesa-dri_25.0.7-0ubuntu0.24.04.1_amd64.deb ...
+Unpacking libgl1-mesa-dri:amd64 (25.0.7-0ubuntu0.24.04.1) over (24.2.8-1ubuntu1~
+24.04.1) ...
+Preparing to unpack .../05-libglx-mesa0_25.0.7-0ubuntu0.24.04.1_amd64.deb ...
+De-configuring libglx-mesa0:i386 (24.2.8-1ubuntu1~24.04.1), to allow configurati
+on of libglx-mesa0:amd64 (25.0.7-0ubuntu0.24.04.1) ...
+Unpacking libglx-mesa0:amd64 (25.0.7-0ubuntu0.24.04.1) over (24.2.8-1ubuntu1~24.
+04.1) ...
+Preparing to unpack .../06-libglx-mesa0_25.0.7-0ubuntu0.24.04.1_i386.deb ...
+Unpacking libglx-mesa0:i386 (25.0.7-0ubuntu0.24.04.1) over (24.2.8-1ubuntu1~24.0
+4.1) ...
+Preparing to unpack .../07-libegl-mesa0_25.0.7-0ubuntu0.24.04.1_amd64.deb ...
+Unpacking libegl-mesa0:amd64 (25.0.7-0ubuntu0.24.04.1) over (24.2.8-1ubuntu1~24.
+04.1) ...
+Preparing to unpack .../08-libgbm-dev_25.0.7-0ubuntu0.24.04.1_amd64.deb ...
+Unpacking libgbm-dev:amd64 (25.0.7-0ubuntu0.24.04.1) over (24.2.8-1ubuntu1~24.04
+.1) ...
+Preparing to unpack .../09-libgbm1_25.0.7-0ubuntu0.24.04.1_amd64.deb ...
+De-configuring libgbm1:i386 (24.2.8-1ubuntu1~24.04.1), to allow configuration of
+ libgbm1:amd64 (25.0.7-0ubuntu0.24.04.1) ...
+Unpacking libgbm1:amd64 (25.0.7-0ubuntu0.24.04.1) over (24.2.8-1ubuntu1~24.04.1)
+ ...
+Preparing to unpack .../10-libgbm1_25.0.7-0ubuntu0.24.04.1_i386.deb ...
+Unpacking libgbm1:i386 (25.0.7-0ubuntu0.24.04.1) over (24.2.8-1ubuntu1~24.04.1) 
+...
+Preparing to unpack .../11-mesa-libgallium_25.0.7-0ubuntu0.24.04.1_i386.deb ...
+De-configuring mesa-libgallium:amd64 (24.2.8-1ubuntu1~24.04.1), to allow configu
+ration of mesa-libgallium:i386 (25.0.7-0ubuntu0.24.04.1) ...
+Unpacking mesa-libgallium:i386 (25.0.7-0ubuntu0.24.04.1) over (24.2.8-1ubuntu1~2
+4.04.1) ...
+Preparing to unpack .../12-mesa-libgallium_25.0.7-0ubuntu0.24.04.1_amd64.deb ...
+Unpacking mesa-libgallium:amd64 (25.0.7-0ubuntu0.24.04.1) over (24.2.8-1ubuntu1~
+24.04.1) ...
+Preparing to unpack .../13-libxatracker2_25.0.7-0ubuntu0.24.04.1_amd64.deb ...
+Unpacking libxatracker2:amd64 (25.0.7-0ubuntu0.24.04.1) over (24.2.8-1ubuntu1~24
+.04.1) ...
+Preparing to unpack .../14-mesa-va-drivers_25.0.7-0ubuntu0.24.04.1_amd64.deb ...
+De-configuring mesa-va-drivers:i386 (24.2.8-1ubuntu1~24.04.1), to allow configur
+ation of mesa-va-drivers:amd64 (25.0.7-0ubuntu0.24.04.1) ...
+Unpacking mesa-va-drivers:amd64 (25.0.7-0ubuntu0.24.04.1) over (24.2.8-1ubuntu1~
+24.04.1) ...
+Preparing to unpack .../15-mesa-va-drivers_25.0.7-0ubuntu0.24.04.1_i386.deb ...
+Unpacking mesa-va-drivers:i386 (25.0.7-0ubuntu0.24.04.1) over (24.2.8-1ubuntu1~2
+4.04.1) ...
+Preparing to unpack .../16-mesa-vdpau-drivers_25.0.7-0ubuntu0.24.04.1_i386.deb .
+..
+De-configuring mesa-vdpau-drivers:amd64 (24.2.8-1ubuntu1~24.04.1), to allow conf
+iguration of mesa-vdpau-drivers:i386 (25.0.7-0ubuntu0.24.04.1) ...
+Unpacking mesa-vdpau-drivers:i386 (25.0.7-0ubuntu0.24.04.1) over (24.2.8-1ubuntu
+1~24.04.1) ...
+Preparing to unpack .../17-mesa-vdpau-drivers_25.0.7-0ubuntu0.24.04.1_amd64.deb 
+...
+Unpacking mesa-vdpau-drivers:amd64 (25.0.7-0ubuntu0.24.04.1) over (24.2.8-1ubunt
+u1~24.04.1) ...
+Preparing to unpack .../18-mesa-vulkan-drivers_25.0.7-0ubuntu0.24.04.1_i386.deb 
+...
+De-configuring mesa-vulkan-drivers:amd64 (24.2.8-1ubuntu1~24.04.1), to allow con
+figuration of mesa-vulkan-drivers:i386 (25.0.7-0ubuntu0.24.04.1) ...
+Unpacking mesa-vulkan-drivers:i386 (25.0.7-0ubuntu0.24.04.1) over (24.2.8-1ubunt
+u1~24.04.1) ...
+Preparing to unpack .../19-mesa-vulkan-drivers_25.0.7-0ubuntu0.24.04.1_amd64.deb
+ ...
+Unpacking mesa-vulkan-drivers:amd64 (25.0.7-0ubuntu0.24.04.1) over (24.2.8-1ubun
+tu1~24.04.1) ...
+Preparing to unpack .../20-libosmesa6_25.0.7-0ubuntu0.24.04.1_i386.deb ...
+Unpacking libosmesa6:i386 (25.0.7-0ubuntu0.24.04.1) over (24.2.8-1ubuntu1~24.04.
+1) ...
+Setting up mesa-vulkan-drivers:amd64 (25.0.7-0ubuntu0.24.04.1) ...
+Setting up mesa-vulkan-drivers:i386 (25.0.7-0ubuntu0.24.04.1) ...
+Setting up mesa-vdpau-drivers:amd64 (25.0.7-0ubuntu0.24.04.1) ...
+Setting up mesa-vdpau-drivers:i386 (25.0.7-0ubuntu0.24.04.1) ...
+Setting up mesa-libgallium:amd64 (25.0.7-0ubuntu0.24.04.1) ...
+Setting up mesa-libgallium:i386 (25.0.7-0ubuntu0.24.04.1) ...
+Setting up ubuntu-drivers-common (1:0.9.7.6ubuntu3.2) ...
+Setting up libgbm1:amd64 (25.0.7-0ubuntu0.24.04.1) ...
+Setting up libgbm1:i386 (25.0.7-0ubuntu0.24.04.1) ...
+Setting up libgl1-mesa-dri:amd64 (25.0.7-0ubuntu0.24.04.1) ...
+Setting up libgl1-mesa-dri:i386 (25.0.7-0ubuntu0.24.04.1) ...
+Setting up libgbm-dev:amd64 (25.0.7-0ubuntu0.24.04.1) ...
+Setting up libxatracker2:amd64 (25.0.7-0ubuntu0.24.04.1) ...
+Setting up libegl-mesa0:amd64 (25.0.7-0ubuntu0.24.04.1) ...
+Setting up mesa-va-drivers:amd64 (25.0.7-0ubuntu0.24.04.1) ...
+Setting up mesa-va-drivers:i386 (25.0.7-0ubuntu0.24.04.1) ...
+Setting up libosmesa6:i386 (25.0.7-0ubuntu0.24.04.1) ...
+Setting up libglx-mesa0:amd64 (25.0.7-0ubuntu0.24.04.1) ...
+Setting up libglx-mesa0:i386 (25.0.7-0ubuntu0.24.04.1) ...
+Setting up language-pack-en (1:24.04+20250724) ...
+Setting up language-pack-en-base (1:24.04+20250724) ...
+Generating locales (this might take a while)...
+Generation complete.
+Processing triggers for libc-bin (2.39-0ubuntu8.5) ...
+(base) ian-martin-ajzenszmidt@ian-martin-ajzenszmidt-CFSZ5-3:~$ nano krylovmet.py
+(base) ian-martin-ajzenszmidt@ian-martin-ajzenszmidt-CFSZ5-3:~$ cat krylovmet.py#!/usr/bin/env python3
+"""
+Tiny meteorology-flavoured Krylov demo:
+3D-Var normal equations solved with Conjugate Gradient (CG).
+
+- State x: 2D temperature field on a grid (flattened to 1D vector)
+- Background term: B^{-1} ≈ (I - alpha * Laplacian) (Helmholtz-like), SPD
+- Observation operator H: point sampling at m grid points
+- R = sigma_r^2 I
+- Solve (B^{-1} + H^T R^{-1} H) δx = H^T R^{-1}(y - H x_b)
+- Analysis: x_a = x_b + δx
+"""
+
+import numpy as np
+
+# ----------------------------
+# Utilities
+# ----------------------------
+def build_laplacian_coeffs(nx, ny, dx=1.0, dy=1.0):
+    """Return helper to apply 5-point Laplacian with homogeneous Neumann BCs."""
+    inv_dx2 = 1.0 / (dx * dx)
+    inv_dy2 = 1.0 / (dy * dy)
+
+    def lap(u):
+        U = u.reshape(ny, nx)
+        V = np.empty_like(U)
+
+        # Neumann BC via one-sided differences at boundaries
+        # interior
+        V[1:-1,1:-1] = (
+            (U[1:-1,2:] - 2*U[1:-1,1:-1] + U[1:-1,0:-2]) * inv_dx2 +
+            (U[2:,1:-1] - 2*U[1:-1,1:-1] + U[0:-2,1:-1]) * inv_dy2
+        )
+        # edges: replicate nearest interior gradient (Neumann ~ zero normal gradient)
+        # left/right
+        V[:,0]     = (U[:,1]     - U[:,0])     * inv_dx2 + \
+                     (np.roll(U, -1, axis=0)[:,0] - 2*U[:,0] + np.roll(U, 1, axis=0)[:,0]) * inv_dy2
+        V[:,-1]    = (U[:,-2]    - U[:,-1])    * inv_dx2 + \
+                     (np.roll(U, -1, axis=0)[:,-1] - 2*U[:,-1] + np.roll(U, 1, axis=0)[:,-1]) * inv_dy2
+        # top/bottom
+        V[0,:]     = (np.roll(U, -1, axis=1)[0,:] - 2*U[0,:] + np.roll(U, 1, axis=1)[0,:]) * inv_dx2 + \
+                     (U[1,:]     - U[0,:])     * inv_dy2
+        V[-1,:]    = (np.roll(U, -1, axis=1)[-1,:] - 2*U[-1,:] + np.roll(U, 1, axis=1)[-1,:]) * inv_dx2 + \
+                     (U[-2,:]    - U[-1,:])    * inv_dy2
+
+        # corners got included by rows above; good enough for demo.
+        return V.ravel()
+
+    return lap
+
+def make_obs_operator(idx_obs, n_state):
+    """Return H(v) and HT(w) closures for point-sampling observations."""
+    idx_obs = np.asarray(idx_obs, dtype=int)
+    m = idx_obs.size
+
+    def H(v):
+        return v[idx_obs]  # shape (m,)
+
+    def HT(w):
+        out = np.zeros(n_state, dtype=w.dtype)
+        np.add.at(out, idx_obs, w)  # scatter add
+        return out
+
+    return H, HT
+
+# ----------------------------
+# Conjugate Gradient (Krylov)
+# ----------------------------
+def conjugate_gradient(A, b, M_inv=None, x0=None, tol=1e-6, maxiter=200, callback=None):
+    """
+    Solve A x = b for SPD A using preconditioned CG.
+    A: function(v)->A v
+    M_inv: function(r)->approximate M^{-1} r (preconditioner)
+    """
+    n = b.size
+    x = np.zeros(n) if x0 is None else x0.copy()
+    r = b - A(x)
+    z = M_inv(r) if M_inv else r
+    p = z.copy()
+    rz_old = np.dot(r, z)
+    if callback:
+        callback(0, np.linalg.norm(r))
+
+    for k in range(1, maxiter+1):
+        Ap = A(p)
+        alpha = rz_old / np.dot(p, Ap)
+        x += alpha * p
+        r -= alpha * Ap
+        rn = np.linalg.norm(r)
+        if callback:
+            callback(k, rn)
+        if rn <= tol:
+            break
+        z = M_inv(r) if M_inv else r
+        rz_new = np.dot(r, z)
+        beta = rz_new / rz_old
+        p = z + beta * p
+        rz_old = rz_new
+    return x, k, rn
+
+# ----------------------------
+# Problem setup (toy 3D-Var)
+# ----------------------------
+def main():
+    rng = np.random.default_rng(42)
+
+    nx, ny = 80, 60
+    n = nx * ny
+    dx = dy = 1.0
+
+    # "True" field (smooth waves + small-scale)
+    y_coords, x_coords = np.mgrid[0:ny, 0:nx]
+    truth = (
+        10
+        + 2.5*np.sin(2*np.pi*x_coords/nx) * np.cos(2*np.pi*y_coords/ny)
+        + 0.8*np.sin(4*np.pi*x_coords/nx + 0.6) * np.sin(3*np.pi*y_coords/ny + 1.1)
+    )
+    truth += 0.3 * rng.standard_normal(size=(ny, nx))
+    x_true = truth.ravel()
+
+    # Background (first guess): truth + background noise
+    sigma_b = 1.5
+    x_b = x_true + sigma_b * rng.standard_normal(n)
+
+    # Observations: pick m random grid points, add obs noise
+    m = int(0.12 * n)  # ~12% of points observed
+    idx_obs = rng.choice(n, size=m, replace=False)
+    sigma_r = 0.8
+    y_obs = x_true[idx_obs] + sigma_r * rng.standard_normal(m)
+
+    # Operators
+    lap = build_laplacian_coeffs(nx, ny, dx, dy)
+    alpha = 0.15  # controls background smoothness (larger -> stronger B^{-1})
+    def Binv(v):  # Helmholtz-like SPD operator: (I - alpha*Lap) v
+        return v - alpha * lap(v)
+
+    H, HT = make_obs_operator(idx_obs, n)
+
+    # Left-hand side operator: A = B^{-1} + H^T R^{-1} H
+    rinv = 1.0 / (sigma_r**2)
+    def Aop(v):
+        return Binv(v) + HT(rinv * H(v))
+
+    # Right-hand side: H^T R^{-1} (y - H x_b)
+    b = HT(rinv * (y_obs - H(x_b)))
+
+    # Preconditioner: diagonal of A (cheap approx)
+    # For Binv ≈ (1 + 2*alpha*(1/dx^2 + 1/dy^2)) on interior; tweak for demo
+    diag_Binv = 1.0 + 2.0*alpha*((1.0/dx**2) + (1.0/dy**2))
+    diag = np.full(n, diag_Binv)
+    # Each observed location contributes +1/σ_r^2 to the diagonal
+    np.add.at(diag, idx_obs, rinv)
+    M_inv = lambda r: r / diag
+
+    # Solve with CG (Krylov)
+    history = []
+    def cb(k, rn):
+        history.append((k, rn))
+        if k % 10 == 0:
+            print(f"iter {k:3d} | residual {rn:.3e}")
+
+    x0 = np.zeros(n)  # start from zero increment
+    dx_sol, iters, final_res = conjugate_gradient(Aop, b, M_inv=M_inv, x0=x0, tol=1e-6, maxiter=500, callback=cb)
+
+    x_analysis = x_b + dx_sol
+
+    # Diagnostics
+    def rmse(a, b):
+        return np.sqrt(np.mean((a - b)**2))
+
+    print("\n=== Results ===")
+    print(f"CG iterations: {iters}, final residual: {final_res:.3e}")
+    print(f"Background RMSE vs truth: {rmse(x_b, x_true):.3f}")
+    print(f"Analysis   RMSE vs truth: {rmse(x_analysis, x_true):.3f}")
+
+    # Optional quicklook (comment out if running headless)
+    try:
+        import matplotlib.pyplot as plt
+
+        fig1 = plt.figure()
+        plt.title("Background vs Analysis RMSE by iteration (residual norm)")
+        it, res = np.array(history).T
+        plt.semilogy(it, res)
+        plt.xlabel("Iteration")
+        plt.ylabel("||r_k||")
+
+        fig2 = plt.figure()
+        plt.title("Truth")
+        plt.imshow(x_true.reshape(ny, nx), origin="lower")
+        plt.colorbar()
+
+        fig3 = plt.figure()
+        plt.title("Background (x_b)")
+        plt.imshow(x_b.reshape(ny, nx), origin="lower")
+        plt.colorbar()
+
+        fig4 = plt.figure()
+        plt.title("Analysis (x_a)")
+        plt.imshow(x_analysis.reshape(ny, nx), origin="lower")
+        plt.colorbar()
+
+        plt.show()
+    except Exception as e:
+        print(f"(Skipping plots: {e})")
+
+if __name__ == "__main__":
+    main()
+(base) ian-martin-ajzenszmidt@ian-martin-ajzenszmidt-CFSZ5-3:~$ python3 krylovmet.py
+iter   0 | residual 6.228e+01
+iter  10 | residual 1.894e-06
+
+=== Results ===
+CG iterations: 11, final residual: 3.599e-07
+Background RMSE vs truth: 1.514
+Analysis   RMSE vs truth: 1.457
+
+
